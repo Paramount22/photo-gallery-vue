@@ -49,6 +49,7 @@
   width: 100%;
   font-weight: 600;
   text-transform: uppercase;
+  outline: none;
 }
 
 .modal-button {

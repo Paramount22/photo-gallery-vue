@@ -1,7 +1,7 @@
 <template>
   <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-    <router-link to="">
-      <div class="card category-item">
+    <router-link :to="'/category/' + gallery.id">
+      <div class="card category-item" @mouseover="mouseOver">
         <img
           :src="'../assets/images/' + gallery.image"
           class="card-img-top"
@@ -9,7 +9,9 @@
         />
         <div class="card-body">
           <p class="card-text">{{ gallery.title }}</p>
-          <small></small>
+          <small v-if="gallery.photos.length > 0"
+            >{{ gallery.photos.length }} fotiek</small
+          >
         </div>
       </div>
     </router-link>
@@ -17,6 +19,7 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
   props: {
     gallery: {
@@ -24,7 +27,13 @@ export default {
     },
   },
   setup() {
-    return {};
+    const active = ref(false);
+    const mouseOver = () => {
+      active.value = !active.value;
+      console.log('hover');
+    };
+
+    return { mouseOver };
   },
 };
 </script>

@@ -9,7 +9,14 @@ export const data = [
     id: 2,
     title: 'Architektúra',
     image: 'pexels-photo-261187.jpeg',
-    photos: [],
+    photos: [
+      { id: 1, image: 'pexels-photo-261187' },
+      { id: 2, image: 'pexels-photo-186077' },
+      { id: 3, image: 'pexels-photo-221506' },
+      { id: 4, image: 'pexels-photo-261146' },
+      { id: 5, image: 'pexels-photo-24464' },
+      { id: 6, image: 'pexels-photo-323780' },
+    ],
   },
   {
     id: 3,
